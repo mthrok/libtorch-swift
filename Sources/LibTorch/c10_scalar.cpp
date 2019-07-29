@@ -1,6 +1,7 @@
 #include <torch/torch.h>
 #include "c10_scalar.h"
 
+
 int scalarIsFloatingPoint(Scalar* scalar) {
   auto *p = (c10::Scalar *)scalar;
   return (int)p->isFloatingPoint();

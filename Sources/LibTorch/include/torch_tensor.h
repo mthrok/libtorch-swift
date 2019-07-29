@@ -20,6 +20,12 @@ extern "C" {
   int tensorIsQuantized(Tensor*);
 
   // Accessors
+  TensorAccessor* tensorAccessorDouble1(Tensor*);
+  TensorAccessor* tensorAccessorDouble2(Tensor*);
+  TensorAccessor* tensorAccessorDouble3(Tensor*);
+  TensorAccessor* tensorAccessorFloat1(Tensor*);
+  TensorAccessor* tensorAccessorFloat2(Tensor*);
+  TensorAccessor* tensorAccessorFloat3(Tensor*);
   Scalar* tensorItem(Tensor*);
   Tensor* tensorIndex(Tensor*, int64_t);
   Tensor* tensorSlice(Tensor* tensor, int64_t dim, int64_t start, int64_t end, int64_t step);

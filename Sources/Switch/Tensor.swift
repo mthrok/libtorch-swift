@@ -1,5 +1,16 @@
 import LibTorch
 
+class TensorAccessor {
+    let _p:OpaquePointer
+
+    init (_ pointer:OpaquePointer) {
+        self._p = pointer
+    }
+
+
+}
+
+
 
 class Tensor {
     let _p:OpaquePointer

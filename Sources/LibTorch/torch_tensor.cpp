@@ -61,6 +61,54 @@ int tensorIsQuantized(Tensor* tensor) {
 ////////////////////////////////////////////////////////////////////////////////
 // Accessors
 ////////////////////////////////////////////////////////////////////////////////
+TensorAccessor* tensorAccessorFloat1(Tensor* tensor) {
+  auto a = ((torch::Tensor*)tensor)->accessor<float, 1>();
+  at::TensorAccessor<float, 1> *p = new at::TensorAccessor<float, 1>(nullptr, nullptr, nullptr);
+  using std::swap;
+  swap(a, *p);
+  return (TensorAccessor*) p;
+}
+
+TensorAccessor* tensorAccessorFloat2(Tensor* tensor) {
+  auto a = ((torch::Tensor*)tensor)->accessor<float, 2>();
+  at::TensorAccessor<float, 2> *p = new at::TensorAccessor<float, 2>(nullptr, nullptr, nullptr);
+  using std::swap;
+  swap(a, *p);
+  return (TensorAccessor*) p;
+}
+
+TensorAccessor* tensorAccessorFloat3(Tensor* tensor) {
+  auto a = ((torch::Tensor*)tensor)->accessor<float, 3>();
+  at::TensorAccessor<float, 3> *p = new at::TensorAccessor<float, 3>(nullptr, nullptr, nullptr);
+  using std::swap;
+  swap(a, *p);
+  return (TensorAccessor*) p;
+}
+
+TensorAccessor* tensorAccessorDouble1(Tensor* tensor) {
+  auto a = ((torch::Tensor*)tensor)->accessor<double, 1>();
+  at::TensorAccessor<double, 1> *p = new at::TensorAccessor<double, 1>(nullptr, nullptr, nullptr);
+  using std::swap;
+  swap(a, *p);
+  return (TensorAccessor*) p;
+}
+
+TensorAccessor* tensorAccessorDouble2(Tensor* tensor) {
+  auto a = ((torch::Tensor*)tensor)->accessor<double, 2>();
+  at::TensorAccessor<double, 2> *p = new at::TensorAccessor<double, 2>(nullptr, nullptr, nullptr);
+  using std::swap;
+  swap(a, *p);
+  return (TensorAccessor*) p;
+}
+
+TensorAccessor* tensorAccessorDouble3(Tensor* tensor) {
+  auto a = ((torch::Tensor*)tensor)->accessor<double, 3>();
+  at::TensorAccessor<double, 3> *p = new at::TensorAccessor<double, 3>(nullptr, nullptr, nullptr);
+  using std::swap;
+  swap(a, *p);
+  return (TensorAccessor*) p;
+}
+
 Scalar* tensorItem(Tensor* tensor) {
   auto val = ((torch::Tensor*) tensor)->item();
   c10::Scalar *p = new c10::Scalar();

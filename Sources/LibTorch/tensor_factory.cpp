@@ -3,37 +3,41 @@
 
 extern "C" {
 
-Tensor* zeros(long* sizes, uint64_t length) {
+Tensor* zeros(long* sizes, uint64_t length, TensorOptions* opt) {
   using std::swap;
 
-  auto t = at::zeros(c10::IntArrayRef(sizes, length));
+  auto c10opt = (c10::TensorOptions*) opt;
+  auto t = torch::zeros(c10::IntArrayRef(sizes, length), *c10opt);
   torch::Tensor* p = new torch::Tensor();
   std::swap(t, *p);
   return (Tensor*) p;
 }
 
-Tensor* ones(long* sizes, uint64_t length) {
+Tensor* ones(long* sizes, uint64_t length, TensorOptions* opt) {
   using std::swap;
 
-  auto t = at::ones(c10::IntArrayRef(sizes, length));
+  auto c10opt = (c10::TensorOptions*) opt;
+  auto t = torch::ones(c10::IntArrayRef(sizes, length), *c10opt);
   torch::Tensor* p = new torch::Tensor();
   std::swap(t, *p);
   return (Tensor*) p;
 }
 
-Tensor* randn(long* sizes, uint64_t length) {
+Tensor* randn(long* sizes, uint64_t length, TensorOptions* opt) {
   using std::swap;
 
-  auto t = torch::randn(c10::IntArrayRef(sizes, length));
+  auto c10opt = (c10::TensorOptions*) opt;
+  auto t = torch::randn(c10::IntArrayRef(sizes, length), *c10opt);
   torch::Tensor *p = new torch::Tensor();
   std::swap(t, *p);
   return (Tensor*) p;
 }
 
-Tensor* randint(int64_t low, int64_t high, long* sizes, uint64_t length) {
+Tensor* randint(int64_t low, int64_t high, long* sizes, uint64_t length, TensorOptions* opt) {
   using std::swap;
 
-  auto t = torch::randint(low, high, c10::IntArrayRef(sizes, length));
+  auto c10opt = (c10::TensorOptions*) opt;
+  auto t = torch::randint(low, high, c10::IntArrayRef(sizes, length), *c10opt);
   torch::Tensor *p = new torch::Tensor();
   std::swap(t, *p);
   return (Tensor*) p;

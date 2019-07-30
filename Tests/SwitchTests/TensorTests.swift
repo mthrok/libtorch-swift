@@ -9,11 +9,11 @@ final class TensorClassTests: XCTestCase {
         var val:Int32
 
         val = (t1 == t2).item().to()
-        XCTAssertFalse(val as! Bool)
+        XCTAssertEqual(val, 0)
         val = (t1 == t1).item().to()
-        XCTAssertTrue(val as! Bool)
+        XCTAssertEqual(val, 0)
         val = (t2 == t2).item().to()
-        XCTAssertTrue(val as! Bool)
+        XCTAssertEqual(val, 1)
     }
 
     func TensorIsSame() {
@@ -94,7 +94,6 @@ final class TensorFactoryTests: XCTestCase {
         XCTAssertEqual(t3.dim(), 2)
         XCTAssertEqual(t3.sizes(), [2, 2])
 
-        // TODO: Add value check. The following is not working
         var val:Float = t3.slice(0, 0, 1).slice(1, 0, 1).item().to()
         XCTAssertEqual(val, 2)
     }

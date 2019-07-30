@@ -43,21 +43,24 @@ int tensorIsQuantized(Tensor* tensor) {
 Scalar* tensorItem(Tensor* tensor) {
   auto val = ((torch::Tensor*) tensor)->item();
   c10::Scalar *p = new c10::Scalar();
-  std::swap(val, *p);
+  using std::swap;
+  swap(val, *p);
   return (Scalar*) p;
 }
 
 Tensor* tensorIndex(Tensor* tensor, int64_t index) {
   auto t = (*((torch::Tensor*) tensor))[index];
   torch::Tensor *p = new torch::Tensor();
-  std::swap(t, *p);
+  using std::swap;
+  swap(t, *p);
   return (Tensor*) p;
 }
 
 Tensor* tensorSlice(Tensor* tensor, int64_t dim, int64_t start, int64_t end, int64_t step)  {
   auto t = ((torch::Tensor*) tensor)->slice(dim, start, end, step);
   torch::Tensor *p = new torch::Tensor();
-  std::swap(t, *p);
+  using std::swap;
+  swap(t, *p);
   return (Tensor*) p;
 }
 
@@ -73,7 +76,8 @@ Tensor* tensorAdd(Tensor* tensor1, Tensor* tensor2) {
 
   auto t = (*p1) + (*p2);
   torch::Tensor *p = new torch::Tensor();
-  std::swap(t, *p);
+  using std::swap;
+  swap(t, *p);
   return (Tensor*) p;
 }
 
@@ -83,7 +87,8 @@ Tensor* tensorEqual(Tensor* tensor1, Tensor* tensor2) {
 
   auto t = p1->eq(*p2);
   torch::Tensor *p = new torch::Tensor();
-  std::swap(t, *p);
+  using std::swap;
+  swap(t, *p);
   return (Tensor*) p;
 }
 

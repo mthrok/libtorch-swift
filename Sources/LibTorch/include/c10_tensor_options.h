@@ -10,6 +10,11 @@ extern "C" {
   TensorOptions* newTensorOptions();
   void deleteTensorOptions(TensorOptions*);
 
+  TensorOptions* newTensorOptionsFromDtypeInt32();
+  TensorOptions* newTensorOptionsFromDtypeInt64();
+  TensorOptions* newTensorOptionsFromDtypeFloat();
+  TensorOptions* newTensorOptionsFromDtypeDouble();
+
 #ifdef __cplusplus
 }
 #endif

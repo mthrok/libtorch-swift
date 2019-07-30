@@ -7,10 +7,10 @@
 extern "C" {
 #endif
 
-  Tensor* ones(long* sizes, uint64_t length);
-  Tensor* zeros(long* sizes, uint64_t length);
-  Tensor* randn(long* sizes, uint64_t length);
-  Tensor* randint(int64_t low, int64_t high, long*sizes, uint64_t length);
+  Tensor* ones(long* sizes, uint64_t length, TensorOptions* opt);
+  Tensor* zeros(long* sizes, uint64_t length, TensorOptions* opt);
+  Tensor* randn(long* sizes, uint64_t length, TensorOptions* opt);
+  Tensor* randint(int64_t low, int64_t high, long*sizes, uint64_t length, TensorOptions* opt);
 
 #ifdef __cplusplus
 }

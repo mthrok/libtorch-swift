@@ -76,8 +76,34 @@ int main() {
 # Planning and Progress
 
 - [x] Set up a workspace for wrapping LibTorch with C and Swift.
-- [ ] **WIP** Make Tensor and related classes available.
-- [ ] [Factory functions](https://pytorch.org/cppdocs/notes/tensor_creation.html#factory-functions)
+<Details><Summary>WIP: Port basic Tensor creation</Summary>
+
+  - [ ] Scalar
+  - [ ] Tensor
+    - [ ] [Accessor](https://pytorch.org/cppdocs/notes/tensor_basics.html#efficient-access-to-tensor-elements)
+    - [ ] [External Data](https://pytorch.org/cppdocs/notes/tensor_basics.html#using-externally-created-data)
+  - [ ] TensorOptions
+    - [ ] dtype
+    - [ ] device
+  - [ ] [Factory functions](https://pytorch.org/cppdocs/notes/tensor_creation.html#factory-functions)
+    - [x] variable size
+    - [ ] Compatible with TensorOptions
+      - [ ] arange
+      - [ ] empty
+      - [ ] eye
+      - [ ] full
+      - [ ] linspace
+      - [ ] logspace
+      - [ ] ones
+      - [ ] rand
+      - [ ] randn
+      - [ ] randint
+      - [ ] randperm
+      - [ ] zeros
+
+</Details>
+
+- [ ] Port basic Tensor manipulation.
 - [ ] Build computational graph with AutoGrad module.
 - [ ] Wrap NN module.
 - [ ] Build Module.

@@ -83,23 +83,22 @@ int main() {
     - [ ] [Accessor](https://pytorch.org/cppdocs/notes/tensor_basics.html#efficient-access-to-tensor-elements)
     - [ ] [External Data](https://pytorch.org/cppdocs/notes/tensor_basics.html#using-externally-created-data)
   - [ ] TensorOptions
-    - [ ] dtype
+    - [x] dtype
     - [ ] device
   - [ ] [Factory functions](https://pytorch.org/cppdocs/notes/tensor_creation.html#factory-functions)
     - [x] variable size
-    - [ ] Compatible with TensorOptions
-      - [ ] arange
-      - [ ] empty
-      - [ ] eye
-      - [ ] full
-      - [ ] linspace
-      - [ ] logspace
-      - [ ] ones
-      - [ ] rand
-      - [ ] randn
-      - [ ] randint
-      - [ ] randperm
-      - [ ] zeros
+    - [ ] arange
+    - [ ] empty
+    - [ ] eye
+    - [ ] full
+    - [ ] linspace
+    - [ ] logspace
+    - [ ] ones
+    - [ ] rand
+    - [ ] randn
+    - [ ] randint
+    - [ ] randperm
+    - [ ] zeros
 
 </Details>
 

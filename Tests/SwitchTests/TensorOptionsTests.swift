@@ -4,7 +4,7 @@ import XCTest
 
 final class TensorOptionsTests: XCTestCase {
     func InitDeinit() {
-        //let opt = TensorOptions()
+        let opt = TensorOptions()
     }
 
     static var allTests = [

@@ -7,9 +7,14 @@
 extern "C" {
 #endif
 
+  // Create/Delete new TensorOption object
   TensorOptions* newTensorOptions();
   void deleteTensorOptions(TensorOptions*);
 
+  //Accessor method
+  Dtype* tensorOptionsDtype(TensorOptions*);
+
+  // Factory functions
   TensorOptions* newTensorOptionsFromDtypeInt32();
   TensorOptions* newTensorOptionsFromDtypeInt64();
   TensorOptions* newTensorOptionsFromDtypeFloat();

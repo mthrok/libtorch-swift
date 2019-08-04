@@ -18,6 +18,14 @@ class Tensor {
         return s
     }
 
+    func options() -> TensorOptions {
+        return TensorOptions(LibTorch.tensorOptions(self._p));
+    }
+
+    func dtype() -> Dtype {
+        return Dtype(LibTorch.tensorDtype(self._p));
+    }
+
     func index(_ i:Int64) -> Tensor {
         return Tensor(LibTorch.tensorIndex(self._p, i))
     }

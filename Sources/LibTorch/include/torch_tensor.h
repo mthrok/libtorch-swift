@@ -10,6 +10,9 @@ extern "C" {
   // Attributes
   int64_t tensorDim(Tensor*);
   void tensorSizes(Tensor*, uint64_t* values);
+  TensorOptions* tensorOptions(Tensor*);
+  Dtype* tensorDtype(Tensor*);
+
   int tensorIsCuda(Tensor*);
   int tensorIsHip(Tensor*);
   int tensorIsSparse(Tensor*);

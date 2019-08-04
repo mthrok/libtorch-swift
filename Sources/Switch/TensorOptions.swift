@@ -15,6 +15,10 @@ class TensorOptions {
     deinit {
         LibTorch.deleteTensorOptions(self._p)
     }
+
+    func dtype() -> Dtype {
+        return Dtype(LibTorch.tensorOptionsDtype(self._p));
+    }
 }
 
 func TensorOptionsFromDtypeInt32() -> TensorOptions {
@@ -36,8 +40,8 @@ func TensorOptionsFromDtypeDouble() -> TensorOptions {
 
 func TensorOptionsFromDtype(_ dtype: String) -> TensorOptions {
     switch dtype.lowercased() {
-    case "int32": return TensorOptionsFromDtypeInt32();
-    case "int64": return TensorOptionsFromDtypeInt64();
+    case "int32", "int": return TensorOptionsFromDtypeInt32();
+    case "int64", "long": return TensorOptionsFromDtypeInt64();
     case "float": return TensorOptionsFromDtypeFloat();
     case "double": return TensorOptionsFromDtypeDouble();
     default: return TensorOptions();

@@ -2,6 +2,9 @@
 
 This is some experimental attempt to wrap LibTorch, PyTorch's C++ API, with Swift.
 
+# Why
+It's one of my random Sunday afternoon project, in which I am learning something new, so not much reason or discussion of pros/cons.
+
 # Goal
 
 The goal of this project is to reproduce <Details><Summary>[the C++ end-to-end example](https://pytorch.org/cppdocs/frontend.html#end-to-end-example)</Summary>

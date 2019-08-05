@@ -38,6 +38,12 @@ class Tensor {
         return Tensor(LibTorch.tensorSlice(self._p, dim, start, end, step));
     }
 
+    subscript(index:Int) -> Tensor {
+        get {
+            return Tensor(LibTorch.tensorOperatorSubscript(self._p, Int64(index)))
+        }
+    }
+
     func isSame(_ other: Tensor) -> Bool {
         // Check if underlying object Tensor objects are identical object
         return LibTorch.tensorIsSame(self._p, other._p) == 1

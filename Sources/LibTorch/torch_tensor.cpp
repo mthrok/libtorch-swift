@@ -82,12 +82,18 @@ Tensor* tensorSlice(Tensor* tensor, int64_t dim, int64_t start, int64_t end, int
   return (Tensor*) p;
 }
 
+Tensor* tensorOperatorSubscript(Tensor* tensor, int64_t index) {
+  auto t = ((torch::Tensor*) tensor)->operator[](index);
+  torch::Tensor *p = new torch::Tensor();
+  swap(t, *p);
+  return (Tensor*) p;
+}
+
 int tensorIsSame(Tensor* tensor1, Tensor* tensor2) {
   torch::Tensor *p1 = (torch::Tensor*) tensor1;
   torch::Tensor *p2 = (torch::Tensor*) tensor2;
   return (int)p1->is_same(*p2);
 }
-
 
 ////////////////////////////////////////////////////////////////////////////////
 // Operator Overloads

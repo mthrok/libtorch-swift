@@ -23,6 +23,7 @@ extern "C" {
   Scalar* tensorItem(Tensor*);
   Tensor* tensorIndex(Tensor*, int64_t);
   Tensor* tensorSlice(Tensor* tensor, int64_t dim, int64_t start, int64_t end, int64_t step);
+  Tensor* tensorOperatorSubscript(Tensor* tensor, int64_t index);
   int tensorIsSame(Tensor*, Tensor*);
 
   // Operator overloads

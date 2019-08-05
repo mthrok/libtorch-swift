@@ -7,6 +7,7 @@
 extern "C" {
 #endif
 
+  Tensor* arange(long start, long end, long step, TensorOptions* opt);
   Tensor* ones(long* sizes, uint64_t length, TensorOptions* opt);
   Tensor* zeros(long* sizes, uint64_t length, TensorOptions* opt);
   Tensor* randn(long* sizes, uint64_t length, TensorOptions* opt);

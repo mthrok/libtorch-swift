@@ -3,6 +3,12 @@ import XCTest
 
 
 final class TensorFactoryTests: XCTestCase {
+    func testArange() {
+        let tensor = arange(0, 10, 1);
+        XCTAssertEqual(tensor.dim(), 1)
+        XCTAssertEqual(tensor.sizes(), [10,])
+    }
+
     func testOnes2D() {
         let tensor = ones(3, 4)
         XCTAssertEqual(tensor.dim(), 2)
@@ -63,14 +69,15 @@ final class TensorFactoryTests: XCTestCase {
     }
 
     static var allTests = [
-        ("testOnes2D", testOnes2D),
-        ("testOnes3D", testOnes3D),
-        ("testZeros2D", testZeros2D),
-        ("testZeros3D", testZeros3D),
-        ("testRandn2D", testRandn2D),
-        ("testRandn3D", testRandn3D),
-        ("testRandnInt2D", testRandInt2D),
-        ("testRandnInt3D", testRandInt3D),
-        ("testTensorAdd", testTensorAdd),
+      ("testArange", testArange),
+      ("testOnes2D", testOnes2D),
+      ("testOnes3D", testOnes3D),
+      ("testZeros2D", testZeros2D),
+      ("testZeros3D", testZeros3D),
+      ("testRandn2D", testRandn2D),
+      ("testRandn3D", testRandn3D),
+      ("testRandnInt2D", testRandInt2D),
+      ("testRandnInt3D", testRandInt3D),
+      ("testTensorAdd", testTensorAdd),
     ]
 }

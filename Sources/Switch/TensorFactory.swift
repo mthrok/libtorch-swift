@@ -1,6 +1,11 @@
 import LibTorch
 
 
+func arange(_ start:Int, _ end:Int, _ step:Int, dtype:String="float") -> Tensor {
+    let opt:TensorOptions = TensorOptionsFromDtype(dtype);
+    return Tensor(LibTorch.arange(start, end, step, opt._p))
+}
+
 func zeros(_ sizes:Int..., dtype:String="float") -> Tensor {
     var sizes64 = sizes;
     let opt:TensorOptions = TensorOptionsFromDtype(dtype);

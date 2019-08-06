@@ -79,7 +79,8 @@ int main() {
 # Planning and Progress
 
 - [x] Set up a workspace for wrapping LibTorch with C and Swift.
-<Details><Summary>WIP: Port basic Tensor creation</Summary>
+
+- <Details><Summary>WIP: Port basic Tensor creation</Summary>
 
   - [ ] Scalar
   - [ ] Tensor
@@ -105,7 +106,13 @@ int main() {
 
 </Details>
 
-- [ ] Port basic Tensor manipulation.
+- <Details><Summary>Port basic Tensor manipulation.</Summary>
+
+    - [x] resize
+    - [x] subscript
+
+</Details>
+
 - [ ] Build computational graph with AutoGrad module.
 - [ ] Wrap NN module.
 - [ ] Build Module.

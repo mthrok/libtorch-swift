@@ -95,3 +95,35 @@ final class TensorClassSliceTests: XCTestCase {
       ("TensorOperatorSubscript", TensorOperatorSubscript)
     ]
 }
+
+
+final class TensorResizeTests: XCTestCase {
+    func TensorResizeAs_() {
+        let t = arange(6);
+
+        XCTAssertEqual(t.dim(), 1)
+        XCTAssertEqual(t.sizes(), [6])
+
+        t.resizeAs_(zeros(2, 3))
+
+        XCTAssertEqual(t.dim(), 2)
+        XCTAssertEqual(t.sizes(), [2, 3])
+    }
+
+    func TensorResize_() {
+        let t = arange(6);
+
+        XCTAssertEqual(t.dim(), 1)
+        XCTAssertEqual(t.sizes(), [6])
+
+        t.resize_(2, 3)
+
+        XCTAssertEqual(t.dim(), 2)
+        XCTAssertEqual(t.sizes(), [2, 3])
+    }
+
+    static var allTests = [
+      ("TensorResize_", TensorResize_),
+      ("TensorResizeAs_", TensorResizeAs_),
+    ]
+}

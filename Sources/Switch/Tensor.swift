@@ -38,6 +38,17 @@ class Tensor {
         return Tensor(LibTorch.tensorSlice(self._p, dim, start, end, step));
     }
 
+    func resize_(_ sizes:Int...) -> Tensor {
+        var sizes64 = sizes;
+        LibTorch.tensorResize_(self._p, &sizes64, UInt64(sizes.count));
+        return self
+    }
+
+    func resizeAs_(_ tensor:Tensor) -> Tensor {
+        LibTorch.tensorResizeAs_(self._p, tensor._p);
+        return self
+    }
+
     subscript(index:Int) -> Tensor {
         get {
             return Tensor(LibTorch.tensorOperatorSubscript(self._p, Int64(index)))

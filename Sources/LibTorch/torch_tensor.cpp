@@ -89,6 +89,17 @@ Tensor* tensorOperatorSubscript(Tensor* tensor, int64_t index) {
   return (Tensor*) p;
 }
 
+void tensorResize_(Tensor* tensor, long* sizes, uint64_t length) {
+  auto t = (torch::Tensor*) tensor;
+  t->resize_(c10::IntArrayRef(sizes, length));
+}
+
+void tensorResizeAs_(Tensor* tensor1, Tensor* tensor2) {
+  auto t1 = (torch::Tensor*) tensor1;
+  auto t2 = (torch::Tensor*) tensor2;
+  t1->resize_as_(*t2);
+}
+
 int tensorIsSame(Tensor* tensor1, Tensor* tensor2) {
   torch::Tensor *p1 = (torch::Tensor*) tensor1;
   torch::Tensor *p2 = (torch::Tensor*) tensor2;

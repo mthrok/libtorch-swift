@@ -4,7 +4,7 @@ import XCTest
 
 final class TensorFactoryTests: XCTestCase {
     func testArange() {
-        let tensor = arange(0, 10, 1);
+        let tensor = arange(10);
         XCTAssertEqual(tensor.dim(), 1)
         XCTAssertEqual(tensor.sizes(), [10,])
     }

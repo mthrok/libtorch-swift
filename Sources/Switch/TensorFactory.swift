@@ -1,9 +1,13 @@
 import LibTorch
 
 
-func arange(_ start:Int, _ end:Int, _ step:Int, dtype:String="float") -> Tensor {
+func arange(_ start:Int, _ end:Int, step:Int=1, dtype:String="float") -> Tensor {
     let opt:TensorOptions = TensorOptionsFromDtype(dtype);
     return Tensor(LibTorch.arange(start, end, step, opt._p))
+}
+
+func arange(_ end:Int, step:Int=1, dtype:String="float") -> Tensor {
+    return arange(0, end, step:step, dtype:dtype)
 }
 
 func zeros(_ sizes:Int..., dtype:String="float") -> Tensor {

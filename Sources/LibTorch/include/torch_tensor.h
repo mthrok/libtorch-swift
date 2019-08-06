@@ -22,8 +22,10 @@ extern "C" {
   // Accessors
   Scalar* tensorItem(Tensor*);
   Tensor* tensorIndex(Tensor*, int64_t);
-  Tensor* tensorSlice(Tensor* tensor, int64_t dim, int64_t start, int64_t end, int64_t step);
-  Tensor* tensorOperatorSubscript(Tensor* tensor, int64_t index);
+  Tensor* tensorSlice(Tensor*, int64_t dim, int64_t start, int64_t end, int64_t step);
+  Tensor* tensorOperatorSubscript(Tensor*, int64_t index);
+  void tensorResize_(Tensor*, long* sizes, uint64_t length);
+  void tensorResizeAs_(Tensor*, Tensor*);
   int tensorIsSame(Tensor*, Tensor*);
 
   // Operator overloads

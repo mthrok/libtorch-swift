@@ -6,6 +6,7 @@ public func allTests() -> [XCTestCaseEntry] {
       testCase(TensorOptionsTests.allTests),
       testCase(TensorClassTests.allTests),
       testCase(TensorClassSliceTests.allTests),
+      testCase(TensorResizeTests.allTests),
       testCase(TensorFactoryTests.allTests),
       testCase(DtypeTests.allTests),
     ]
